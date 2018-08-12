@@ -24,11 +24,7 @@ body {
     width: 180px;
     background: #ff6677;
     position: absolute;
-<<<<<<< HEAD
-    top:70px;
-=======
     top: 70px;
->>>>>>> 574bcff578df2d787ac59351342bd311eb82ba68
     height: 100%;
     padding:70px 10px 15px 10px;
 }
