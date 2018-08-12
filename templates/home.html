@@ -11,8 +11,10 @@
         <div class="header">
             <h1 id="title">JSchool</h1>
             <h2 id="about">About</h2>
-            <a href="{{url_for('login')}}"> <button class="btn" id="log_in">Log in</button></a>
-            <a href="{{url_for('signup')}}"> <button class="btn" id="sign_up">Sign up</button></a>
+            <div class = "register_buttons">   
+            <a href="{{url_for('signup')}}"><button class="btn" id="sign_up" onclick="">Sign Up</button></a>
+            <a href="{{url_for('login')}}"><button class="btn" id="log_in">Log in</button></a>
+            </div>
         </div>
         <div class="body">
             <div class="sidebar">
@@ -20,8 +22,7 @@
                 <p class="filter" id="science">Science schools</p>
             </div>
             <div class="main_content">
-                {% for school in schools%}
-                <h6>{{school.name}}</h6>
+                
             </div>
         </div>
     </body>
