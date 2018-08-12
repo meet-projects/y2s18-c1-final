@@ -9,9 +9,11 @@ body {
 }
 
 .header {
-    font-family: sans-serif;
+    font-family: serif;
     height: 60px;
     padding:15px;
+    position: absolute;
+    top: 20px;
 }
 
 .container {
