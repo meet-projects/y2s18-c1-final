@@ -1,5 +1,6 @@
 # Database related imports
 # Make sure to import your tables!
+
 from model import Base, School
 
 from sqlalchemy import create_engine
