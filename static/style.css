@@ -24,7 +24,7 @@ body {
     width: 180px;
     background: #ff6677;
     position: absolute;
-    top: 0;
+    top:70px;
     height: 100%;
     padding:15px 10px 15px 10px;
 }
@@ -32,7 +32,7 @@ body {
 .main-content {
     background: #ffffcc;
     position: absolute;
-    top: 0;
+    top: 70px;
     left: 200px;
     margin: 5px;
     padding: 0px 15px 10px 15px
