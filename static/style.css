@@ -9,7 +9,7 @@ body {
 }
 
 .header {
-    font-family: sans-serif;
+    font-family: serif;
     height: 60px;
     padding:15px;
     border: 5px solid #ff6677;
@@ -36,4 +36,10 @@ body {
     left: 200px;
     margin: 5px;
     padding: 0px 15px 10px 15px
+}
+
+#title{
+    position: relative;
+    top: 5px;
+    right:5px;
 }
