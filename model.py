@@ -13,6 +13,7 @@ class School(Base):
     id = Column(Integer, primary_key = True)
     name = Column(String)
     test = Column(String)
+    principle = Column(String)
     year = Column(Integer)
     number_of_students = Column(Integer)
     nationality = Column(String)
