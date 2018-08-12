@@ -16,6 +16,21 @@ def home():
 def login():
     return render_template('login.html')
 
+@app.route('/signup')
+def signup():
+    return render_template('signup.html')
+
+@app.route('/about_us')
+def about_us():
+    return render_template('about_us.html')
+
+@app.route('/school_id/<school_id>')
+def school():
+    return render_template(
+        'school.html',
+        school_id=school_id,
+        school=query_by_id(school_id))
+
 # Running the Flask app
 if __name__ == "__main__":
     app.run(debug=True)
