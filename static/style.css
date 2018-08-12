@@ -24,22 +24,34 @@ body {
     width: 180px;
     background: #ff6677;
     position: absolute;
-    top: 0;
+    top: 70px;
     height: 100%;
-    padding:15px 10px 15px 10px;
+    padding:70px 10px 15px 10px;
 }
 
 .main-content {
     background: #ffffcc;
     position: absolute;
-    top: 0;
+    top: 70px;
     left: 200px;
     margin: 5px;
-    padding: 0px 15px 10px 15px
+    padding: 70px 15px 10px 15px
 }
 
 #title{
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left :10px;
+}
+#about{
+    position: absolute;
     top: 5px;
-    right:5px;
+    left: 130px;
+}
+
+.register_buttons{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+
 }
