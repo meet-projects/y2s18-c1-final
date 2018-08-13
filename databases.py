@@ -34,6 +34,18 @@ def add_school(name, year, test, principle, number_of_students, nationality, num
     session.add(school_object)
     session.commit()
 
+def add_user(first_name, last_name, username, password, link):	
+    user_object = User(
+        first_name=first_name,
+        last_name=last_name,
+        username=username,
+        password=password,
+        link = link)
+
+    session.add(school_object)
+    session.commit()
+
+
 def query_by_name(name):
     return School.query.filter(School.name.contains('search_name'))
 

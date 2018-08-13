@@ -32,11 +32,12 @@ class School(Base):
 class User(Base):
     __tablename__ = "users"
     id = Column(Integer, primary_key = True)
-    name = Column(String)
+    first_name = Column(String)
+    last_name=Column(String)
     username=Column(String)
-    nationality = Column(String)
-    age= Column(Integer)
+    password=Column(String)
     link = Column(String)
    
     def __repr__(self):
         return ("User name: {}".format(self.name))
+
