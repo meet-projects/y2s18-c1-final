@@ -23,11 +23,13 @@ def login():
         if user==None:
             return "User doesn't exist."
         else:
+            # TODO check if password matches
+
             login_session['id'] = user.id
             login_session['username']= user.username
             login_session['first_name']=user.first_name
             login_session['last_name']=user.last_name
-            return redirect('home')
+            return redirect(url_for('home'))
 
     if request.method=="GET":
         return render_template('login.html')
