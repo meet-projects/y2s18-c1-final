@@ -14,6 +14,10 @@
             <div class = "register_buttons">   
             <a href="{{url_for('signup')}}"><button class="btn" id="sign_up" onclick="">Sign Up</button></a>
             <a href="{{url_for('login')}}"><button class="btn" id="log_in">Log in</button></a>
+            <form id="searchbar" action="/search">
+                <input type="text" placeholder="Search.." name="search_name">
+                <button type="submit">Search</button>
+            </form>
             </div>
         </div>
         <div class="body">
@@ -22,7 +26,7 @@
                 <p class="filter" id="science">Science schools</p>
             </div>
             <div class="main_content">
-            
+                
             </div>
         </div>
     </body>
