@@ -9,7 +9,7 @@ Base = declarative_base()
 
 # Example code:
 class School(Base):
-    __tablename__ = "students"
+    __tablename__ = "schools"
     id = Column(Integer, primary_key = True)
     name = Column(String)
     test = Column(String)
@@ -21,7 +21,22 @@ class School(Base):
     location = Column(String)
     specialty = Column(String)
     average = Column(Integer)
+    language= Column(String)
     link = Column(String)
+
+
 
     def __repr__(self):
         return ("School name: {}".format(self.name))
+
+class User(Base):
+    __tablename__ = "users"
+    id = Column(Integer, primary_key = True)
+    name = Column(String)
+    username=Column(String)
+    nationality = Column(String)
+    age= Column(Integer)
+    link = Column(String)
+   
+    def __repr__(self):
+        return ("User name: {}".format(self.name))

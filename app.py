@@ -2,7 +2,7 @@
 from flask import Flask, render_template, url_for, redirect, request, session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_school
+from databases import add_school, query_all, query_by_id, query_by_name
 
 # Starting the flask app
 app = Flask(__name__)
@@ -30,6 +30,10 @@ def school(school_id):
         'school.html',
         school_id=school_id,
         school=query_by_id(school_id))
+
+@app.route('/search', methods='POST')
+def search_bar():
+    return render_template('search.html')
 
 # Running the Flask app
 if __name__ == "__main__":
