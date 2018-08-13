@@ -52,13 +52,18 @@ body {
     top: 0px;
 }
 .jschool_nav{
-
     position: fixed;
     top: 0px;
     width: 100%;
     left: 0px;
 }
 
+.container{
+    color: rgba(31, 30, 131, 0.795);
+    position: absolute;
+    top: 100px;
+    left: 450px ;
+}
 
 
 
