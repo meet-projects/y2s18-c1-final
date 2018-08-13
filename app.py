@@ -34,7 +34,6 @@ def school(school_id):
 @app.route('/search', methods='POST')
 def search_bar():
     return render_template('search.html')
-
 # Running the Flask app
 if __name__ == "__main__":
     app.run(debug=True)
