@@ -1,7 +1,7 @@
 # Database related imports
 # Make sure to import your tables!
 
-from model import Base, School
+from model import Base, School, User
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -16,7 +16,7 @@ session = DBSession()
 # Your database functions are located under here (querying, adding items, etc.)
 
 # Example of adding a student:
-def add_school(name, year, test, principle, number_of_students, nationality, number_of_teachers, location, specialty, average, link):	
+def add_school(name, year, test, principle, number_of_students, nationality, number_of_teachers, location, specialty, average,language, link):	
     school_object = School(
         name=name,
         year=year,
@@ -28,14 +28,14 @@ def add_school(name, year, test, principle, number_of_students, nationality, num
         location = location,
         specialty = specialty,
         average = average,
+        language=language,
         link = link)
 
     session.add(school_object)
     session.commit()
 
 def query_by_name(name):
-	return session.query(School).filter_by(
-		name=name).first()
+    return School.query.filter(School.name.contains('search_name'))
 
 
 def query_all():
