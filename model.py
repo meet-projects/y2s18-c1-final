@@ -34,7 +34,7 @@ class User(Base):
     id = Column(Integer, primary_key = True)
     first_name = Column(String)
     last_name=Column(String)
-    username=Column(String)
+    username=Column(String, unique=True)
     password=Column(String)
     link = Column(String)
     comments=relationship("Comment", back_populates="users") 
@@ -48,6 +48,6 @@ class Comment(Base):
     id=Column(Integer, primary_key = True)
     text=Column(String)
     user_id=Column(Integer, ForeignKey('users.id'))
-    users = relationship("User", back_populates="comments")
+    user = relationship("User", back_populates="comments")
 
    
