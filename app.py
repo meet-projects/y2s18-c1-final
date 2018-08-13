@@ -25,7 +25,7 @@ def about_us():
     return render_template('about_us.html')
 
 @app.route('/school_id/<school_id>')
-def school():
+def school(school_id):
     return render_template(
         'school.html',
         school_id=school_id,

@@ -18,8 +18,8 @@ session = DBSession()
 # Example of adding a student:
 def add_school(name, year, test, principle, number_of_students, nationality, number_of_teachers, location, specialty, average, link):	
     school_object = School(
-		name=name,
-		year=year,
+        name=name,
+        year=year,
         test = test,
         principle = principle,
         number_of_students = number_of_students,
@@ -34,9 +34,9 @@ def add_school(name, year, test, principle, number_of_students, nationality, num
     session.commit()
 
 def query_by_name(name):
-	school = session.query(School).filter_by(
+	return session.query(School).filter_by(
 		name=name).first()
-	return student
+
 
 def query_all():
 	schools = session.query(School).all()
@@ -51,6 +51,5 @@ def query_all():
 # 	session.commit()
 
 def query_by_id(school_id):
-    school = session.query(School).filter_by(
+    return session.query(School).filter_by(
         school_id=school_id).first()
-    return student
