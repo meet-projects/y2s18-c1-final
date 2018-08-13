@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <title>Log in </title>
+        {% extends "home.html" %}
     </head>
     <body>
-        <div class="header">
-            <h1 id="title">JSchool</h1>
-            <h2 id="about">About</h2>
-            <button class="btn" id="sign_up" onclick="">Sign Up</button>
-            <button class="btn" id="log_in">Log in</button>
+        {%block content%} 
+        <div class="container">
+            <div class="row main">
+                <form class="forms" method="POST" id="log_form">
+                        <div class="form-group">
+                                <label for="username" class="cols-sm-2 control-label">Username</label>
+                                <div class="cols-sm-10">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                                        <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group">
+                                    <label for="password" class="cols-sm-2 control-label">Password</label>
+                                    <div class="cols-sm-10">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                                            <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group ">
+                                        <a href="https://ccp.cloudaccess.net/aff.php?aff=5188" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+                                    </div>
+                </form>
+            </div>
         </div>
-        <div class="main content">
-            <form class="Sign up">
-                <p>Username: </p>
-                <input type="text" name="username">
-                <br>
-                <p>Password: </p>
-                <input type="password" name="password">
-                <input type="Submit" value="Log in">
-            </form>
-        </div>
+        {%endblock%}
     </body>
 </html>
