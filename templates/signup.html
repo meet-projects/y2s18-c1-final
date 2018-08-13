@@ -2,21 +2,9 @@
 <html>
     <head>
         <title>Sign Up</title>
+        {% extends "home.html" %}
     </head>
     <body>
-        <div class="header">
-            <h1 id="title">JSchool</h1>
-            <h2 id="about">About</h2>
-            <button class="btn" id="sign_up" onclick="">Sign Up</button>
-            <button class="btn" id="log_in">Log in</button>
-        </div>
-        <div class="main content">
-            <form>
-                <p id="sign_name">Name</p>
-                <input type="text" name="name">Name
-                <p id="sign_lname">Last Name</p>
-                <input type="">
-            </form>
-        </div> 
+        {% block content %} {% endblock %}
     </body>
 </html>
