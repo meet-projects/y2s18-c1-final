@@ -42,12 +42,17 @@ def add_user(first_name, last_name, username, password, link):
         password=password,
         link = link)
 
-    session.add(school_object)
+    session.add(user_object)
     session.commit()
 
 
 def query_by_name(name):
     return School.query.filter(School.name.contains('search_name'))
+
+def query_by_username(username):
+    return session.query(User).filter_by(
+        username=username).first()
+
 
 
 def query_all():
