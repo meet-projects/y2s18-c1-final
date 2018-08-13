@@ -47,11 +47,13 @@ body {
 }
 
 .searchbar{
+    color: blue;
     position: absolute;
     right: -600px;
     top: 0px;
 }
 .jschool_nav{
+    color: rgb(21, 21, 163);
     position: fixed;
     top: 0px;
     width: 100%;
