@@ -12,7 +12,7 @@ body {
     font-family: serif;
     height: 60px;
     padding:15px;
-    border: 5px solid #ff6677;
+    border: 5px solid #6797ff;
 }
 
 .container {
@@ -22,15 +22,15 @@ body {
 
 .sidebar {
     width: 180px;
-    background: #ff6677;
+    background: #66a3ff;
     position: absolute;
-    top: 70px;
+    top: 300px;
     height: 100%;
-    padding:70px 10px 15px 10px;
+    padding:20px 10px 15px 10px;
 }
 
 .main-content {
-    background: #ffffcc;
+    background: #cce0ff;
     position: absolute;
     top: 70px;
     left: 200px;
@@ -39,14 +39,16 @@ body {
 }
 
 #title{
+    font: rgb(0, 178, 209);
     position: absolute;
     top: 0px;
     left :10px;
 }
 #about{
+    font: rgb(0, 178, 209);
     position: absolute;
     top: 5px;
-    left: 150px;
+    left: 130px;
 }
 
 .register_buttons{
