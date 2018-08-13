@@ -1,7 +1,7 @@
 # Database related imports
 # Make sure to import your tables!
 
-from model import Base, School, User
+from model import Base, School, User, Comment
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -45,6 +45,14 @@ def add_user(first_name, last_name, username, password, link):
     session.add(user_object)
     session.commit()
 
+def add_comment(text, user, school):
+    comment_object = Comment(
+        text=text,
+        user=user,
+        school=school)
+
+    session.add(comment_object)
+    session.commit()   
 
 def query_by_name(name):
     return School.query.filter(School.name.contains('search_name'))
