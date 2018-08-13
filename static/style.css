@@ -46,10 +46,10 @@ body {
     top: 15px;
 }
 
-#searchbar{
+.searchbar{
     position: absolute;
-    right: 50px;
-    top: px;
+    right: -600px;
+    top: 0px;
 }
 .jschool_nav{
 
