@@ -15,7 +15,7 @@ def home():
 @app.route('/login')
 def login():
     return render_template('login.html')
-
+ 
 @app.route('/signup')
 def signup():
     return render_template('signup.html')
@@ -34,6 +34,10 @@ def school(school_id):
 @app.route('/search', methods=['POST'])
 def search_bar():
     return render_template('search.html')
+
+@app.route('/users')
+def users():
+    return render_template('users.html')
 # Running the Flask app
 if __name__ == "__main__":
     app.run(debug=True)
