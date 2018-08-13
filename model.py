@@ -23,6 +23,7 @@ class School(Base):
     average = Column(Integer)
     language= Column(String)
     link = Column(String)
+    comments=relationship("Comment", back_populates="schools") 
 
 
 
@@ -49,5 +50,6 @@ class Comment(Base):
     text=Column(String)
     user_id=Column(Integer, ForeignKey('users.id'))
     user = relationship("User", back_populates="comments")
+    school = relationship("School", back_populates="comments")
 
    

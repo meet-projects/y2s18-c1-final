@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, redirect, request
 from flask import session as login_session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_school, query_all, query_by_id, query_by_name, add_user, query_by_username
+from databases import add_school, query_all, query_by_id, query_by_name, add_user, query_by_username, add_comment
 
 # Starting the flask app
 app = Flask(__name__)
@@ -48,8 +48,14 @@ def school(school_id):
             school_id=school_id,
             school=query_by_id(school_id))
     else:
-        pass
-        #alllow users to post comments here
+        text=request.form["text"]
+        user=query_by_username(login_session['username'])
+        school=query_by_id(school_id)
+        add_comment(text, user, school)
+        return render_template(
+            'school.html',
+            school_id=school_id,
+            school=school)
 
 
 @app.route('/search', methods=['POST'])
