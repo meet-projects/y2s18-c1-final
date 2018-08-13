@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from sqlalchemy import create_engine
@@ -37,7 +37,17 @@ class User(Base):
     username=Column(String)
     password=Column(String)
     link = Column(String)
+    comments=relationship("Comment", back_populates="users") 
+   
    
     def __repr__(self):
         return ("User name: {}".format(self.name))
 
+class Comment(Base):
+    __tablename__="comments"
+    id=Column(Integer, primary_key = True)
+    text=Column(String)
+    user_id=Column(Integer, ForeignKey('users.id'))
+    users = relationship("User", back_populates="comments")
+
+   
