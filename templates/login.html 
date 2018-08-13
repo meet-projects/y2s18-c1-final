@@ -11,7 +11,7 @@
             <button class="btn" id="log_in">Log in</button>
         </div>
         <div class="main content">
-            <form>
+            <form class="Sign up">
                 <p>Username: </p>
                 <input type="text" name="username">
                 <br>
