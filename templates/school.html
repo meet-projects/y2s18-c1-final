@@ -2,5 +2,24 @@
 <html>
     <head>
         <title>{{school.name}}</title>
+        {% "extends home.html" %}
     </head>
+    <body>
+            {%block home%} 
+            <li class="nav-item ">
+                      
+                  <a class="nav-link" href="{{url_for('home')}}" id="home">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('signup')}}" id="sign_btn">Sign up</a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="{{url_for('login')}}" id="log_btn">Log in</a>
+              </li>
+          {%endblock%}
+          {%block content%} 
+              <h1>{{school.name}}</h1>
+              <p><strong>Nationa</strong></p>
+          {%endblock%}
+    </body>
 </html>
