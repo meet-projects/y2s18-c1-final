@@ -45,7 +45,7 @@ def signup():
         password= request.form["password"]
         confirm= request.form["confirm"]
         if password==confirm:
-            add_user(first_name, last_name, username, password, link)
+            add_user(first_name, last_name, username, password)
 
     if request.method=="GET":
         return render_template('signup.html')
