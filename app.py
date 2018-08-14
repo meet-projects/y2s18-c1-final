@@ -11,7 +11,8 @@ app = Flask(__name__)
 # App routing code here
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', login_session=login_session)
+
 
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -81,7 +82,7 @@ def search_bar():
 @app.route('/users/<string:username>')
 def users(username):
     comments=query_comment_by_user(username)
-    return render_template('users.html', u=query_by_username(username), comments=comments)
+    return render_template('users.html', u=query_by_username(login_session['username']), comments=comments)
 
 @app.route('/logout')
 def logout():

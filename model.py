@@ -22,7 +22,7 @@ class School(Base):
     specialty = Column(String)
     average = Column(Integer)
     language= Column(String)
-    comments=relationship("Comment", back_populates="schools") 
+    comments=relationship("Comment", back_populates="school") 
 
 
 
@@ -36,7 +36,7 @@ class User(Base):
     last_name=Column(String)
     username=Column(String, unique=True)
     password=Column(String)
-    comments=relationship("Comment", back_populates="users") 
+    comments=relationship("Comment", back_populates="user") 
    
    
     def __repr__(self):
@@ -48,6 +48,7 @@ class Comment(Base):
     text=Column(String)
     user_id=Column(Integer, ForeignKey('users.id'))
     user = relationship("User", back_populates="comments")
+    school_id=Column(Integer, ForeignKey('schools.id'))
     school = relationship("School", back_populates="comments")
 
    
