@@ -43,6 +43,8 @@ def signup():
     if request.method=="POST":
         username = request.form['username']
         password= request.form["password"]
+        first_name=request.form["first_name"]
+        last_name=request.form["last_name"]
         confirm= request.form["confirm"]
         if password==confirm:
             add_user(first_name, last_name, username, password)
