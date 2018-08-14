@@ -24,19 +24,33 @@ def login():
             return "User doesn't exist."
         else:
             # TODO check if password matches
+            if user.password==password:
+                login_session['id'] = user.id
+                login_session['username']= user.username
+                login_session['first_name']=user.first_name
+                login_session['last_name']=user.last_name
+                return redirect(url_for('home'))
 
-            login_session['id'] = user.id
-            login_session['username']= user.username
-            login_session['first_name']=user.first_name
-            login_session['last_name']=user.last_name
-            return redirect(url_for('home'))
+            else:
+                return "Wrong Password"
+        
 
     if request.method=="GET":
         return render_template('login.html')
  
-@app.route('/signup')
+@app.route('/signup',methods=["GET", "POST"])
 def signup():
-    return render_template('signup.html')
+    if request.method=="POST":
+        username = request.form['username']
+        password= request.form["password"]
+        first_name=request.form["first_name"]
+        last_name=request.form["last_name"]
+        confirm= request.form["confirm"]
+        if password==confirm:
+            add_user(first_name, last_name, username, password)
+
+    if request.method=="GET":
+        return render_template('signup.html')
 
 @app.route('/about_us')
 def about_us():

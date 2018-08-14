@@ -22,7 +22,6 @@ class School(Base):
     specialty = Column(String)
     average = Column(Integer)
     language= Column(String)
-    link = Column(String)
     comments=relationship("Comment", back_populates="schools") 
 
 
@@ -37,7 +36,6 @@ class User(Base):
     last_name=Column(String)
     username=Column(String, unique=True)
     password=Column(String)
-    link = Column(String)
     comments=relationship("Comment", back_populates="users") 
    
    

@@ -5,6 +5,18 @@
         {% extends "home.html" %}
     </head>
     <body>
+        {%block home%} 
+          <li class="nav-item ">
+                    
+                <a class="nav-link" href="{{url_for('home')}}" id="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('signup')}}" id="sign_btn">Sign up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{url_for('login')}}" id="log_btn">Log in</a>
+            </li>
+        {%endblock%}
         {% block content %}
 		<div class="container">
                 <div class="row main">
@@ -17,7 +29,7 @@
                                 <div class="cols-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="fname" id="fname"  placeholder="Enter your Name"/>
+                                        <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter your Name"/>
                                     </div>
                                 </div>
                             </div>
@@ -27,7 +39,7 @@
                                 <div class="cols-sm-10">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                                        <input type="text" class="form-control" name="lemail" id="lemail"  placeholder="Enter your Email"/>
+                                        <input type="text" class="form-control" name="last_name" id="last_name"  placeholder="Enter your Email"/>
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +75,7 @@
                             </div>
     
                             <div class="form-group ">
-                                <a href="https://ccp.cloudaccess.net/aff.php?aff=5188" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+                                <a href="#" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
                             </div>
                             
                         </form>
