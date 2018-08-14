@@ -78,6 +78,7 @@
 }
 
 #login{
+    border-radius: 25px;
     position: absolute;
     top: 100px;
     left: 100px ;
