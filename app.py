@@ -78,10 +78,10 @@ def school(school_id):
 def search_bar():
     return render_template('search.html')
 
-@app.route('/users')
-def users():
-    comments=query_comment_by_user(login_session['username'])
-    return render_template('users.html', u=query_by_username(login_session['username']), comments=comments)
+@app.route('/users/<string:username>')
+def users(username):
+    comments=query_comment_by_user(username)
+    return render_template('users.html', u=query_by_username(username), comments=comments)
 
 @app.route('/logout')
 def logout():
