@@ -81,3 +81,4 @@ def query_all():
 def query_by_id(school_id):
     return session.query(School).filter_by(
         school_id=school_id).first()
+
