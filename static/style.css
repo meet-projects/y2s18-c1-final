@@ -49,7 +49,7 @@ body {
 .searchbar{
     color: blue;
     position: absolute;
-    right: -600px;
+    right: -540px;
     top: 0px;
 }
 .jschool_nav {
@@ -65,7 +65,8 @@ body {
 .jschool_nav a:hover {
     color: rgb(13, 72, 148) !important;
 }
-.JSchools{
+#logo{
+    font-weight: bold;
     color : black !important;
 }
 .container{
