@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{u.username}}</title>
+        {% extends "home.html" %}
+    </head>
+    <body>
+            {%block home%} 
+            <li class="nav-item ">
+                      
+                  <a class="nav-link" href="{{url_for('home')}}" id="home">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item ">
+                  <a class="nav-link" href="{{url_for('signup')}}" id="sign_btn">Sign up</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('login')}}" id="log_btn">Log in</a>
+              </li>
+          {%endblock%}
+          {%block content%}
+          <div class="container">
+            <div class="row">
+                    <div class="col-xs-12 col-sm-8">
+                            <h2>{{u.username}}</h2>
+                            <p><strong>First name:</strong>{{u.first_name}}</p>
+                            <p><strong>Last name:</strong>{{u.last_name}}</p>
+                            {%for comment in comments%}
+                    </div>      
+            </div>
+          </div>
+          {%endblock%}
+    </body>
+</html>

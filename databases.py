@@ -59,6 +59,11 @@ def query_by_username(username):
     return session.query(User).filter_by(
         username=username).first()
 
+def query_comment_by_user(username):
+    user=query_by_username(username)
+    return session.query(Comment).filter_by(
+        user=user).all()
+    
 
 
 def query_all():
