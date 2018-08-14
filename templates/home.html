@@ -41,7 +41,9 @@
                             </div>
                           </li>
                     </ul>
-                    <button class="btn btn-light navbar-btn" ><a class="fa fa-user" href="{{url_for('users')}}">User</a></button>
+                    {% if 'id' in login_session %}
+                    <a class="fa fa-user" href="{{url_for('users',username=un.username)}}"><button class="btn btn-light navbar-btn" >User</button></a>
+                    {%endif%}
                     <nav class="navbar navbar-light bg-light searchbar">
                             <form class="form-inline">
                               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -59,9 +61,10 @@
                 <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="..." alt="Card image cap" id="{{school.name}}">
                         <div class="card-body">
-                          <h5 class="card-title">Card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                          <h5 class="card-title"><a href="#" class="btn btn-primary">{{school.name}}</a></h5>
+                          <p class="card-text"><strong>Nationality:</strong>{{school.Nationality}}</p>
+                          <p class="card-text"><strong>Location:</strong>{{school.Location}}</p>
+                          <p class="card-text"><strong>Language:</strong>{{school.Language}}</p>
                         </div>
                       </div>
                 {%endfor%}
