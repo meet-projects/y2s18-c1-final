@@ -16,7 +16,7 @@ session = DBSession()
 # Your database functions are located under here (querying, adding items, etc.)
 
 # Example of adding a student:
-def add_school(name, year, test, principle, number_of_students, nationality, number_of_teachers, location, specialty, average,language, link):	
+def add_school(name, year, test, principle, number_of_students, nationality, number_of_teachers, location, specialty, average,language):	
     school_object = School(
         name=name,
         year=year,
@@ -28,19 +28,17 @@ def add_school(name, year, test, principle, number_of_students, nationality, num
         location = location,
         specialty = specialty,
         average = average,
-        language=language,
-        link = link)
+        language=language)
 
     session.add(school_object)
     session.commit()
 
-def add_user(first_name, last_name, username, password, link):	
+def add_user(first_name, last_name, username, password, ):	
     user_object = User(
         first_name=first_name,
         last_name=last_name,
         username=username,
-        password=password,
-        link = link)
+        password=password)
 
     session.add(user_object)
     session.commit()
@@ -61,6 +59,11 @@ def query_by_username(username):
     return session.query(User).filter_by(
         username=username).first()
 
+def query_comment_by_user(username):
+    user=query_by_username(username)
+    return session.query(Comment).filter_by(
+        user=user).all()
+    
 
 
 def query_all():

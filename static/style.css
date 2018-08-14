@@ -20,7 +20,7 @@ body {
 }
 
 .main-content {
-    background: #cce0ff;
+    background: #3761a0;
     position: absolute;
     top: 70px;
     left: 200px;
@@ -47,19 +47,27 @@ body {
 }
 
 .searchbar{
-    font: blue;
+    color: blue;
     position: absolute;
     right: -600px;
     top: 0px;
 }
-.jschool_nav{
-    color: rgb(21, 21, 163);
+.jschool_nav {
     position: fixed;
     top: 0px;
     width: 100%;
     left: 0px;
 }
 
+.jschool_nav a {
+    color: rgb(119, 136, 158) !important;
+}
+.jschool_nav a:hover {
+    color: rgb(13, 72, 148) !important;
+}
+.JSchools{
+    color : black !important;
+}
 .container{
     color: rgba(31, 30, 131, 0.795);
     position: absolute;
@@ -68,12 +76,9 @@ body {
 }
 
 #login{
-
     position: absolute;
     top: 100px;
-    left: 125px ;
-
-
+    left: 100px ;
 }
 
 

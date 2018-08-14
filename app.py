@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, redirect, request
 from flask import session as login_session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_school, query_all, query_by_id, query_by_name, add_user, query_by_username, add_comment
+from databases import add_school, query_all, query_by_id, query_by_name, add_user, query_by_username, add_comment, query_comment_by_user
 
 # Starting the flask app
 app = Flask(__name__)
@@ -43,9 +43,11 @@ def signup():
     if request.method=="POST":
         username = request.form['username']
         password= request.form["password"]
+        first_name=request.form["first_name"]
+        last_name=request.form["last_name"]
         confirm= request.form["confirm"]
         if password==confirm:
-            add_user(first_name, last_name, username, password, link)
+            add_user(first_name, last_name, username, password)
 
     if request.method=="GET":
         return render_template('signup.html')
@@ -78,7 +80,8 @@ def search_bar():
 
 @app.route('/users')
 def users():
-    return render_template('users.html')
+    comments=query_comment_by_user(login_session['username'])
+    return render_template('users.html', u=query_by_username(login_session['username']), comments=comments)
 
 @app.route('/logout')
 def logout():
