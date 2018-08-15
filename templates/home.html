@@ -2,10 +2,12 @@
 <html>
     <head>
         <title>JSchools</title>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <link rel="stylesheet/scss" type="text/css" href="{{ url_for('static', filename='style.scss') }}">
     </head>
     <body>
         <div class="header">
@@ -61,10 +63,10 @@
                 </nav>
         </div>
         {% block content%}
-        <img src="{{ url_for('static', filename='background_img.jpg') }}" id="background">
+        <!-- <img src="{{ url_for('static', filename='background_img.jpg') }}" id="background"> -->
         <div class="body">
             <div class="main_content">
-                    <div class="container" style="width: 100%; max-width: 100%;">
+                    <div class="container" id="schools" style="width: 100%; max-width: 100%;">
                             <div class="row">
                                 {% for school in schools %}
                                 <div class="col-md-4">
@@ -83,6 +85,22 @@
                 
             </div>
         </div>
+
+
+
+        <!-- <div class="container">
+                {% for school in schools %}
+                <div class="card">
+                  <div class="name">GIGI YEH</div>
+                  <hr/>
+                  <div class="title">Graphic Designer</div>
+                  <div class="email">gigiyeh@company.com</div>
+                  <div class="phone">0938-388-388</div>
+                </div>
+                {%endfor%}
+            </div> -->
+
+
         {%endblock%}
         <script src="{{ url_for('static', filename='jquery.js') }}"></script>
         <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
