@@ -74,7 +74,14 @@ def query_by_id(school_id):
     return session.query(School).filter_by(
         id=school_id).first()
 
+def query_by_nation(nationality):
+    print("filter:",nationality)
+    a = session.query(School).filter_by(nationality=nationality).all()
+    print("a:",a)
+    return a
 
+def query_by_spec(specialty):
+    return session.query(School).filter_by(specialty=specialty).all()
 
 
 if __name__ == "__main__":
