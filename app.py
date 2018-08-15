@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, redirect, request
 from flask import session as login_session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_school, query_all, query_by_id, query_by_name, add_user, query_by_username, add_comment, query_comment_by_user
+from databases import add_school, query_all, query_by_id, query_by_name, add_user, query_by_username, add_comment, query_comment_by_user, query_comment_by_school_id
 
 # Starting the flask app
 app = Flask(__name__)
@@ -12,7 +12,7 @@ app.secret_key = "super secret key"
 # App routing code here
 @app.route('/')
 def home():
-    return render_template('home.html', login_session=login_session)
+    return render_template('home.html', login_session=login_session, schools=query_all())
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -64,22 +64,20 @@ def signup():
 def about_us():
     return render_template('about_us.html')
 
+
+
 @app.route('/school_id/<school_id>', methods=["GET", "POST"])
 def school(school_id):
-    if request.method=='GET':
-        return render_template(
-            'school.html',
-            school_id=school_id,
-            school=query_by_id(school_id))
-    else:
+    school=query_by_id(school_id)
+    if request.method=='POST':
         text=request.form["text"]
         user=query_by_username(login_session['username'])
-        school=query_by_id(school_id)
         add_comment(text, user, school)
-        return render_template(
-            'school.html',
-            school_id=school_id,
-            school=school)
+    return render_template(
+        'school.html',
+        school_id=school_id,
+        school=school,
+        comments=query_comment_by_school_id(school_id))
 
 
 @app.route('/search', methods=['POST'])

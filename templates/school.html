@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>{{school.name}}</title>
-        {% "extends home.html" %}
+        {% extends "home.html" %}
     </head>
     <body>
             {%block home%} 
@@ -24,16 +24,22 @@
               <p><strong>Language:</strong>{{school.language}}</p>
               <p><strong>Location:</strong>{{school.location}}</p>
               <p><strong>Specialty:</strong>{{school.specialty}}</p>
-              <p><strong>Princible:</strong>{{school.princible}}</p>
+              <p><strong>Principal:</strong>{{school.principal}}</p>
               <p><strong>Language:</strong>{{school.language}}</p>
-          {%endblock%}
-          <div class="widget-area no-padding blank">
+
+              {% for comment in comments %}
+              <p><strong>{{comment.user.first_name}} {{comment.user.last_name}}:</strong>{{comment.text}}</p>
+              {% endfor %}
+
+              <div class="widget-area no-padding blank">
                 <div class="status-upload">
-                    <form>
-                        <textarea placeholder="What are you doing right now?" ></textarea>
+                    <form action="{{url_for ('school', school_id=school.id)}}" method="post" >
+                        <textarea name= "text" placeholder="What are you doing right now?" ></textarea>
                         <button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
                     </form>
                 </div>
-            </div>          
+            </div>   
+          {%endblock%}
+       
     </body>
 </html>
