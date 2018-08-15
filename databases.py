@@ -90,3 +90,18 @@ add_school("jhs","sat","karine","american","jerusalem","normal","english")
 
 if __name__ == "__main__":
     app.run(debug=True)
+def query_by_nation(nationality):
+    print("filter:",nationality)
+    a = session.query(School).filter_by(nationality=nationality).all()
+    print("a:",a)
+    return a
+
+def query_by_spec(specialty):
+    return session.query(School).filter_by(specialty=specialty).all()
+
+
+if __name__ == "__main__":
+    add_school("IASA","Bagrot", "Etai Benovich","Israeli", "Haim Kolitz 1", "Arts", "Hebrew" )
+    add_school("St.George School","Tawjihi", "The Very Reverend Hosam Naoum","Palestinian", "18 Nablus", "Regular", "Arabic" )
+    add_school("Anglican International School Jerusalem","IB", "Rosemary Saunders","International", "Hanevi'im 82", "Regular", "English" )
+    add_school("College des Frere- Biet Hanina","GSCE", "George Naber","Palestinian", " Beit Hanina", "Science", "English" )
