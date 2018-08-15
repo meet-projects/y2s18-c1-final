@@ -81,4 +81,7 @@ def query_by_id(school_id):
     return session.query(School).filter_by(
         id=school_id).first()
 
-add_school('jhs', 'highschool', 'sat', 'karine', 100000, 'american', 30, 'jerusalem', 'yy', 65, 'english')
+# def add_school(name, year, test, principle, number_of_students,
+#  nationality, number_of_teachers, location, specialty, average,language):
+
+add_school("boyar", 2000, "bagrot", "Dafna menashe", 1000, "israely", 100, "tora ve-avoda", "none","89", "hebrow")
