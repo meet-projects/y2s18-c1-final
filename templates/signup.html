@@ -24,6 +24,9 @@
                 <div class="row main">
                     <div class="main-login main-center">
                     <h5>Sign up to comment about schools!</h5>
+                    {% if confirm == False %}
+                        <h5>Your passwords do not match.</h5>
+                    {% endif %}
                         <form class="forms" method="POST" action="#" id="sign_form">
                             
                             <div class="form-group">
