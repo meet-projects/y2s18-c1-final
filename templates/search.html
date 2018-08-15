@@ -51,16 +51,24 @@
                         </div>
                         </nav>
                 </div>
-        {% for result in results %}
-        <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title"><a href="{{url_for('school', school_id=result.school_id)}}" class="btn btn-primary">{{result.name}}</a></h5>
-                  <p class="card-text"><strong>Nationality:</strong>{{result.nationality}}</p>
-                  <p class="card-text"><strong>Location:</strong>{{result.location}}</p>
-                  <p class="card-text"><strong>Language:</strong>{{result.language}}</p>
+
+
+                <div class="container">
+                    <div class="row">
+                        {% for result in results %}
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                <h5 class="card-title"><a href="{{url_for('school', school_id=result.school_id)}}" class="btn btn-primary">{{result.name}}</a></h5>
+                                <p class="card-text"><strong>Nationality:</strong>{{result.nationality}}</p>
+                                <p class="card-text"><strong>Location:</strong>{{result.location}}</p>
+                                <p class="card-text"><strong>Language:</strong>{{result.language}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
-              </div>
-        {% endfor %}
         <script src="{{ url_for('static', filename='jquery.js') }}"></script>
         <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
     </body>

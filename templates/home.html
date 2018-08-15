@@ -63,18 +63,22 @@
         <img src="{{ url_for('static', filename='background_img.jpg') }}" id="background">
         <div class="body">
             <div class="main_content">
-                {%for school in schools %}
-                
-                <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                          <h5 class="card-title"><a href="#" class="btn btn-primary">{{school.name}}</a></h5>
-                          <p class="card-text"><strong>Nationality:</strong>{{school.nationality}}</p>
-                          <p class="card-text"><strong>Location:</strong>{{school.location}}</p>
-                          <p class="card-text"><strong>Language:</strong>{{school.language}}</p>
+                    <div class="container">
+                            <div class="row">
+                                {% for school in schools %}
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 18rem;">
+                                        <div class="card-body">
+                                        <h5 class="card-title"><a href="{{url_for('school', school_id=school.id)}}" class="btn btn-primary">{{school.name}}</a></h5>
+                                        <p class="card-text"><strong>Nationality:</strong>{{school.nationality}}</p>
+                                        <p class="card-text"><strong>Location:</strong>{{school.location}}</p>
+                                        <p class="card-text"><strong>Language:</strong>{{school.language}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
                         </div>
-                      </div>
-                {%endfor%}
-                      
                 
             </div>
         </div>
