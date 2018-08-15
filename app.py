@@ -12,7 +12,7 @@ app.secret_key = "super secret key"
 # App routing code here
 @app.route('/')
 def home():
-    return render_template('home.html', login_session=login_session)
+    return render_template('home.html', login_session=login_session, schools=query_all())
 
 
 @app.route('/login', methods=["GET", "POST"])
