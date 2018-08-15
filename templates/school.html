@@ -23,7 +23,8 @@
               </li>
               {% endif %}
           {%endblock%}
-          {%block content%} 
+          {%block content%}
+          <div class="profile">
               <h1>{{school.name}}</h1>
               <p><strong>Nationality:</strong>{{school.nationality}}</p>
               <p><strong>Test:</strong>{{school.test}}</p>
@@ -45,6 +46,7 @@
                     </form>
                 </div>
             </div>   
+        </div>
           {%endblock%}
        
     </body>
