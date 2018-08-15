@@ -10,12 +10,18 @@
                       
                   <a class="nav-link" href="{{url_for('home')}}" id="home">Home <span class="sr-only">(current)</span></a>
               </li>
+              {% if 'username' in login_session %}
+              <li class="nav-item"> 
+                  <a class="nav-link" href="{{url_for('logout')}}" id="sign_btn">Log out</a>
+              </li>
+              {% else %}
               <li class="nav-item ">
                   <a class="nav-link" href="{{url_for('signup')}}" id="sign_btn">Sign up</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="{{url_for('login')}}" id="log_btn">Log in</a>
               </li>
+              {% endif %}
           {%endblock%}
           {%block content%}
           <div class="container">

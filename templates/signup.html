@@ -11,18 +11,28 @@
                     
                 <a class="nav-link" href="{{url_for('home')}}" id="home">Home <span class="sr-only">(current)</span></a>
             </li>
+            {% if 'username' in login_session %}
+            <li class="nav-item"> 
+                <a class="nav-link" href="{{url_for('logout')}}" id="sign_btn">Log out</a>
+            </li>
+            {% else %}
             <li class="nav-item active">
                 <a class="nav-link" href="{{url_for('signup')}}" id="sign_btn">Sign up</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url_for('login')}}" id="log_btn">Log in</a>
             </li>
+            {% endif %}
         {%endblock%}
         {% block content %}
-		<div class="container">
+        <img src="{{ url_for('static', filename='signupbackground.jpg') }}" id="backgroundsignup">
+		<!-- <div class="container"> -->
                 <div class="row main">
                     <div class="main-login main-center">
                     <h5>Sign up to comment about schools!</h5>
+                    {% if confirm == False %}
+                        <h5>Your passwords do not match.</h5>
+                    {% endif %}
                         <form class="forms" method="POST" action="#" id="sign_form">
                             
                             <div class="form-group">
@@ -74,7 +84,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <input type="submit"  class="btn btn-primary" placeholder="Sign Up">
+                            <input type="submit"  class="btn btn-primary" placeholder="Sign Up" id="signupsubmit">
                             
                         </form>
                     </div>
