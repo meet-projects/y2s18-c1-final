@@ -68,7 +68,7 @@
                             <div class="row">
                                 {% for school in schools %}
                                 <div class="col-md-4">
-                                    <div class="card" style="width: 18rem;" >
+                                    <div class="card" style="width: 20rem;" >
                                         <div class="card-body">
                                         <a href="{{url_for('school', school_id=school.id)}}" class="btn btn-primary" id = "cardbutton"><h5 class="card-title">{{school.name}}</h5></a>
                                         <p class="card-text" id="nationality" ><strong>Nationality : </strong>{{school.nationality}}</p>
