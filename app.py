@@ -3,7 +3,7 @@ from flask import Flask, render_template, url_for, redirect, request
 from flask import session as login_session
 
 # Add functions you need from databases.py to the next line!
-from databases import add_school, query_all, query_by_id, query_by_name, add_user, query_by_username, add_comment, query_comment_by_user, query_comment_by_school_id
+from databases import *
 
 # Starting the flask app
 app = Flask(__name__)
@@ -11,8 +11,14 @@ app.secret_key = "super secret key"
 
 # App routing code here
 @app.route('/')
-def home():
-    return render_template('home.html', login_session=login_session, schools=query_all())
+@app.route('/<string:filter>/<string:type>')
+def home(filter=None, type=None):
+    if filter is None or type is None:
+        return render_template('home.html', login_session=login_session, schools=query_all())
+    elif type=="nationality":
+        return render_template('home.html', login_session=login_session, schools=query_by_nation(filter))
+    else:
+        return render_template('home.html', login_session=login_session, schools=query_by_spec(filter))
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -109,6 +115,7 @@ def logout():
     # del login_session['username']
     # del login_session['first_name']
     # del login_session['last_name']
+
 
 # Running the Flask app
 if __name__ == "__main__":
