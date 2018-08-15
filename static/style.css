@@ -2,10 +2,12 @@
     /* Removes extra spacing from all elements on the page */
     padding: 0;
     margin: 0;
+    overflow:hidden
 }
 /* Put your styles BELOW this line */
 .body {
     margin: 0;
+
 }
 
 #background{
@@ -112,4 +114,15 @@
 }
 #signupsubmit:hover{
     border-radius:50%;
+}
+
+#natinality{
+    background: whitesmoke;
+    box-shadow: 10px 10px 20px grey;
+}
+
+#card{
+    background: whitesmoke;
+    box-shadow: 10px 10px 20px grey;
+    border-radius: 25px;
 }
