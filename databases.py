@@ -79,3 +79,4 @@ def query_by_id(school_id):
 
 if __name__ == "__main__":
     add_school("IASA","Bagrot", "Etai Benovich","Israeli", "Haim Kolitz 1", "Arts", "Hebrew" )
+    add_school("St.George School","Tawjihi", "The Very Reverend Hosam Naoum","Palestinian", "18 Nablus", "Regular", "Arabic" )

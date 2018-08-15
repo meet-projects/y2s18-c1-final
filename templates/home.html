@@ -58,13 +58,13 @@
         <div class="body">
             <div class="main_content">
                 {%for school in schools %}
+                
                 <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="..." alt="Card image cap" id="{{school.name}}">
                         <div class="card-body">
                           <h5 class="card-title"><a href="#" class="btn btn-primary">{{school.name}}</a></h5>
-                          <p class="card-text"><strong>Nationality:</strong>{{school.Nationality}}</p>
-                          <p class="card-text"><strong>Location:</strong>{{school.Location}}</p>
-                          <p class="card-text"><strong>Language:</strong>{{school.Language}}</p>
+                          <p class="card-text"><strong>Nationality:</strong>{{school.nationality}}</p>
+                          <p class="card-text"><strong>Location:</strong>{{school.location}}</p>
+                          <p class="card-text"><strong>Language:</strong>{{school.language}}</p>
                         </div>
                       </div>
                 {%endfor%}
