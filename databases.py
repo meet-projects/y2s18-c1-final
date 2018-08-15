@@ -60,7 +60,10 @@ def query_comment_by_user(username):
     return session.query(Comment).filter_by(
         user=user).all()
     
-
+def query_comment_by_school_id(school_id):
+    school=query_by_id(school_id)
+    return session.query(Comment).filter_by(
+        school=school).all()
 
 def query_all():
 	schools = session.query(School).all()
