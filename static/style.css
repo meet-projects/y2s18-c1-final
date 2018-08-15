@@ -2,6 +2,7 @@
     /* Removes extra spacing from all elements on the page */
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 /* Put your styles BELOW this line */
 .body {
@@ -103,7 +104,7 @@
     box-shadow: 10px 10px 20px grey;
     border-radius: 25px;
     position: absolute;
-    top: 50%;
+    top: 15%;
     left: 43%;
     padding: 20px 20px 20px 20px;
 }
@@ -112,4 +113,26 @@
 }
 #signupsubmit:hover{
     border-radius:50%;
+}
+
+#natinality{
+    background: whitesmoke;
+    box-shadow: 10px 10px 20px grey;
+}
+
+#card{
+    background: whitesmoke;
+    border-radius: 25px;
+}
+
+#cardbutton:hover{
+    border-radius: 50px;
+
+}
+
+
+.card-title
+{
+    padding: 0px;
+    margin: 0px !important;
 }
