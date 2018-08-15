@@ -89,11 +89,12 @@ def search_bar():
     # todo: get value of search textbox
     # filter schools by search query_by_name, store it in variable called wtv
     # render school.html with list of schools from previous step
+    if request.method=='POST':
+        search=request.form["search"]
+        schools=query_by_name(name=search).all()
 
-    search=request.form("search")
-    schools=query_by_name(name=search).all()
-
-    return render_template('search.html', results=schools)
+        return render_template('search.html', results=schools)
+    return render_template('home.html',login_session=login_session )
 
 @app.route('/users/<string:username>')
 def users(username):

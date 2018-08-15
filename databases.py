@@ -49,7 +49,7 @@ def add_comment(text, user, school):
     session.commit()   
 
 def query_by_name(name):
-    return School.query.filter(School.name.contains('search_name'))
+    return session.query(School).filter(School.name.contains(name))
 
 def query_by_username(username):
     return session.query(User).filter_by(
