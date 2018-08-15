@@ -15,7 +15,6 @@ class School(Base):
     test = Column(String)
     principal = Column(String)
     nationality = Column(String)
-    number_of_teachers = Column(Integer)
     location = Column(String)
     specialty = Column(String)
     language= Column(String)
