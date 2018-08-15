@@ -9,7 +9,6 @@ from databases import *
 app = Flask(__name__)
 app.secret_key = "super secret key"
 
-# App routing code here
 @app.route('/')
 @app.route('/<string:filter>/<string:type>')
 def home(filter=None, type=None):
@@ -19,6 +18,7 @@ def home(filter=None, type=None):
         return render_template('home.html', login_session=login_session, schools=query_by_nation(filter))
     else:
         return render_template('home.html', login_session=login_session, schools=query_by_spec(filter))
+
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -33,6 +33,7 @@ def login():
         else:
             # TODO check if password matches
             if user.password==password:
+                login_session['id'] = user.id
                 login_session['username']= user.username
                 login_session['first_name']=user.first_name
                 login_session['last_name']=user.last_name
@@ -44,6 +45,14 @@ def login():
 
     if request.method=="GET":
         return render_template('login.html')
+
+@app.route('/delete_comment/<comment_id>')
+def delete_comment(comment_id):
+    comment=query_by_comment_id(comment_id)
+    school_id=comment.school_id
+    delete_comment_by_id(comment_id)
+    
+    return redirect(url_for("school",school_id=school_id))
  
 @app.route('/signup',methods=["GET", "POST"])
 def signup():
@@ -55,6 +64,7 @@ def signup():
         confirm= request.form["confirm"]
         if password==confirm:
             add_user(first_name, last_name, username, password)
+            login_session['id'] = query_by_username(username).id
             login_session['username']= username
             login_session['first_name']=first_name
             login_session['last_name']=last_name
@@ -74,8 +84,6 @@ def about_us():
 
 @app.route('/school_id/<school_id>', methods=["GET", "POST"])
 def school(school_id):
-
-
     school=query_by_id(school_id)
     if request.method=='POST':
         if login_session.get("username")==None:
@@ -88,7 +96,7 @@ def school(school_id):
         'school.html',
         school_id=school_id,
         school=school,
-        comments=query_comment_by_school_id(school_id))
+        comments=query_comment_by_school_id(school_id),user_id=login_session.get("id"))
 
 
 @app.route('/search', methods=['POST'])
