@@ -55,7 +55,7 @@ def signup():
             return redirect(url_for('home'))
             
         else:
-            return render_template('signup.html')
+            return render_template('signup.html', confirm=False)
 
     if request.method=="GET":
         return render_template('signup.html')
@@ -74,7 +74,7 @@ def school(school_id):
     if request.method=='POST':
         if login_session.get("username")==None:
             return redirect(url_for("signup"))
-            
+
         text=request.form["text"]
         user=query_by_username(login_session['username'])
         add_comment(text, user, school)
