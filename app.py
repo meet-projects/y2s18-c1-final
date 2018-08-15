@@ -9,6 +9,7 @@ from databases import *
 app = Flask(__name__)
 app.secret_key = "super secret key"
 
+@app.route('/')
 @app.route('/<string:filter>/<string:type>')
 def home(filter=None, type=None):
     if filter is None or type is None:

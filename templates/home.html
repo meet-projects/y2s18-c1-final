@@ -49,7 +49,7 @@
                           </li>
                     </ul>
                     {% if 'id' in login_session %}
-                    <a class="fa fa-user" href="{{url_for('users',username=un.username)}}"><button class="btn btn-light navbar-btn" >User</button></a>
+                    <a class="fa fa-user" href="{{url_for('users',username=login_session['username'])}}"><button class="btn btn-light navbar-btn" >User</button></a>
                     {%endif%}
                     <nav class="navbar navbar-light bg-light searchbar">
                             <form class="form-inline" method="POST" action="{{ url_for('search_bar') }}">
