@@ -125,7 +125,14 @@
     border-radius: 25px;
 }
 
-.card-title:hover{
+#cardbutton:hover{
     border-radius: 50px;
 
+}
+
+
+.card-title
+{
+    padding: 0px;
+    margin: 0px !important;
 }
