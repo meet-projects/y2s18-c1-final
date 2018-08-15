@@ -19,7 +19,6 @@
           {%endblock%}
           {%block content%} 
               <h1>{{school.name}}</h1>
-              <p><strong>Name:</strong>{{school.name}}</p>
               <p><strong>Nationality:</strong>{{school.nationality}}</p>
               <p><strong>Test:</strong>{{school.test}}</p>
               <p><strong>Language:</strong>{{school.language}}</p>
@@ -27,6 +26,10 @@
               <p><strong>Specialty:</strong>{{school.specialty}}</p>
               <p><strong>Principal:</strong>{{school.principal}}</p>
               <p><strong>Language:</strong>{{school.language}}</p>
+
+              {% for comment in comments %}
+              <p><strong>{{comment.user.first_name}} {{comment.user.last_name}}:</strong>{{comment.text}}</p>
+              {% endfor %}
 
               <div class="widget-area no-padding blank">
                 <div class="status-upload">
