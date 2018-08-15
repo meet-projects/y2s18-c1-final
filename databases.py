@@ -94,8 +94,21 @@ def query_by_spec(specialty):
 
 
 if __name__ == "__main__":
-    add_school:("Anglican International School Jerusalem", "IB", "Rosemary Saunders", "International","Hanevi'im 82, DownTown Jerusalem", "Regular","English"  )
-
+    add_school("IASA","Bagrot", "Etai Benovich","Israeli", "Haim Kolitz 1", "Arts", "Hebrew" )
+    add_school("St.George School","Tawjihi", "The Very Reverend Hosam Naoum","Palestinian", "18 Nablus", "Regular", "Arabic" )
+    add_school("Anglican International School Jerusalem","IB", "Rosemary Saunders","International", "Hanevi'im 82", "Regular", "English" )
+    add_school("College des Frere- Biet Hanina","GSCE", "George Naber","Palestinian", " Beit Hanina", "Science", "English" )
+    add_school("the Hebrew Gymnasia", "Bagrot", "Danny Leibovich", "Israeli", "Keren Kayemet LeIsrael 14", "Regular", "Hebrew")
+    add_school("Keshet highschool", "Bagrot", "Shimon Avichazar", "Israeli", "Alecsandrion st. 24, katamon, Jerusalem", "Regular", "Hebrew")
+    add_school("Ort givat ram", "test", "David Granko", "Israeli", "the Hebrew University Givat Ram , Jerusalem", "Regular", "Hebrew")
+    add_school("Rene Cassin", "Bagrot", "", "Israeli", "Karl Neter st. 1, Jerusalem", "Regular", "Hebrow")
+    add_school("Rosary sister high school", "GSCE", "sir Lucy", "Palestinian", "Beit Hanina, Jerusalem", "Regular", "Arabic")
+    add_school("Schmidt School", "Abitur", "Eva Schonemann", "German", "Nablos Rd. 97, Jerusalem", "Regular", "English")
+    add_school("Scientific technological school in beit hanina (Jerusalem)", "Bagrot", "Hani Sandouqa", "Israeli", "Faidi alami st-beit hanina, Jerusalem", "Science", "Arabic")
+    add_school("Reut", "Bagrot", "erez amber", "Israeli", "eliezer Ha-Gadol 4 Jerusalem", "Regular", "Hebrow")
+    add_school("Omanoyot", "Bagrot", "Tomer Bality", "Israeli", "Yzhak elhanan , rehavya", "Arts", "Hebrew")
+    add_school("Pelech","Bagrot", "Sophy peper", "Israeli", "yehoda st. 31, Jerusalem", "Regular", "Hebrow")
+    add_school("Anglican International School Jerusalem", "IB", "Rosemary Saunders", "International","Hanevi'im 82, DownTown Jerusalem", "Regular","English"  )
     add_school("College des Frere- Beit Hanina", "GSCE", "George Naber ", "Palestinian", "Biet Hanina Rd. 287", "Science", "English")
     add_school("The Hebrew Gymnasia", "Bagrot", "Danny Leibovich", "Israeli", "Keren Kayemet LeIsrael 14", "Regular", "Hebrew")
     add_school("Keshet highschool", "Bagrot", "Shimon Avichazar", "Israeli", "Alecsandrion st. 24, katamon, Jerusalem", "Regular", "Hebrew")
