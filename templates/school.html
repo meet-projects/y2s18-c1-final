@@ -35,7 +35,10 @@
               <p><strong>Language:</strong>{{school.language}}</p>
 
               {% for comment in comments %}
-              <p><strong>{{comment.user.first_name}} {{comment.user.last_name}}:</strong>{{comment.text}}</p>
+                <p><strong>{{comment.user.first_name}} {{comment.user.last_name}}:</strong>{{comment.text}}</p>
+                {%if comment.user.id==user_id %}
+                    <a href="{{url_for('delete_comment', comment_id=comment.id)}}"><button>Delete</button></a>
+                {% endif %}
               {% endfor %}
 
               <div class="widget-area no-padding blank">
