@@ -2,7 +2,6 @@
 # Make sure to import your tables!
 
 from model import Base, School, User, Comment
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -69,13 +68,25 @@ def query_all():
 	schools = session.query(School).all()
 	return schools
 
+def query_by_comment_id(comment_id):
+    return session.query(Comment).filter_by(
+        id=comment_id).first()
+
 
 def query_by_id(school_id):
     return session.query(School).filter_by(
         id=school_id).first()
 
+def delete_comment_by_id(comment_id):
+    session.query(Comment).filter_by(
+        id=comment_id).delete()
 
+    session.commit()
+
+  
+
+add_school("jhs","sat","karine","american","jerusalem","normal","english")
 
 
 if __name__ == "__main__":
-    add_school("IASA","Bagrot", "Etai Benovich","Israeli", "Haim Kolitz 1", "Arts", "Hebrew" )
+    app.run(debug=True)

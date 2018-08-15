@@ -47,4 +47,3 @@ class Comment(Base):
     school_id=Column(Integer, ForeignKey('schools.id'))
     school = relationship("School", back_populates="comments")
 
-   
