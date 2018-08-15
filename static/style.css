@@ -2,7 +2,7 @@
     /* Removes extra spacing from all elements on the page */
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 /* Put your styles BELOW this line */
 .body {
@@ -120,9 +120,10 @@
     box-shadow: 10px 10px 20px grey;
 }
 
-#card{
+.card{
     background: whitesmoke;
-    border-radius: 25px;
+    border-radius: 25%;
+    margin-top: 30px !important;
 }
 
 #cardbutton:hover{
@@ -131,8 +132,8 @@
 }
 
 
-.card-title
-{
+.card-title{
+    width: 270px;
     padding: 0px;
     margin: 0px !important;
 }
