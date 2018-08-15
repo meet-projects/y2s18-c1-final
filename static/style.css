@@ -122,7 +122,7 @@
 
 #card{
     background: whitesmoke;
-    border-radius: 25px;
+    border-radius: 25%;
 }
 
 #cardbutton:hover{
@@ -131,8 +131,7 @@
 }
 
 
-.card-title
-{
+.card-title{
     padding: 0px;
     margin: 0px !important;
 }
