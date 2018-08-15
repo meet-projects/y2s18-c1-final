@@ -80,15 +80,34 @@
     box-shadow: 10px 10px 20px grey;
     border-radius: 25px;
     position: absolute;
-    top: 100px;
-    left: 100px ;    
+    top: 50%;
+    left: 43% ;    
     padding: 20px 20px 20px 20px;
 }
+
 #backgroundlogin{
     width: 100%;
     height: 500px;
     -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
     filter: blur(5px);
+    height: 100%;
+}
+
+#backgroundsignup{
+    width: 100%;
+    height: 80%;
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+}
+
+#sign_form{
+    background: whitesmoke;
+    box-shadow: 10px 10px 20px grey;
+    border-radius: 25px;
+    position: absolute;
+    top: 50%;
+    left: 43% ;    
+    padding: 20px 20px 20px 20px;
 }
 
 
