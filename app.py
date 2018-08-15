@@ -64,6 +64,8 @@ def signup():
 def about_us():
     return render_template('about_us.html')
 
+
+
 @app.route('/school_id/<school_id>', methods=["GET", "POST"])
 def school(school_id):
     if request.method=='GET':
