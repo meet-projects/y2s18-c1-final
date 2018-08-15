@@ -64,11 +64,11 @@
         <img src="{{ url_for('static', filename='background_img.jpg') }}" id="background">
         <div class="body">
             <div class="main_content">
-                    <div class="container">
+                    <div class="container" style="width: 100%; max-width: 100%;">
                             <div class="row">
                                 {% for school in schools %}
                                 <div class="col-md-4">
-                                    <div class="card" style="width: 20rem;" >
+                                    <div class="card" style="width: 20rem; position: relative; left: 50%; transform: translateX(-50%);" >
                                         <div class="card-body">
                                         <a href="{{url_for('school', school_id=school.id)}}" class="btn btn-primary" id = "cardbutton"><h5 class="card-title">{{school.name}}</h5></a>
                                         <p class="card-text" id="nationality" ><strong>Nationality : </strong>{{school.nationality}}</p>
