@@ -67,21 +67,15 @@ def query_comment_by_school_id(school_id):
 
 def query_all():
 	schools = session.query(School).all()
-	for school in schools:
-		print(school)
-		print('\n')
 	return schools
 
-# def delete_school(name):
-# 	session.query(School).filter_by(
-# 		name=name).delete()
-# 	session.commit()
 
 def query_by_id(school_id):
     return session.query(School).filter_by(
         id=school_id).first()
 
-# def add_school(name, year, test, principle, number_of_students,
-#  nationality, number_of_teachers, location, specialty, average,language):
 
-add_school("IASA","Bagrot", "Etai Benovich","Israeli", "Haim Kolitz 1", "Arts", "Hebrew" )
+
+
+if __name__ == "__main__":
+    add_school("IASA","Bagrot", "Etai Benovich","Israeli", "Haim Kolitz 1", "Arts", "Hebrew" )
