@@ -91,7 +91,7 @@ def search_bar():
     search=request.form("search")
     schools=query_by_name(name=search).all()
 
-    return render_template('search.html', a=schools)
+    return render_template('search.html', results=schools)
 
 @app.route('/users/<string:username>')
 def users(username):
