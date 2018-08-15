@@ -83,13 +83,6 @@ def delete_comment_by_id(comment_id):
 
     session.commit()
 
-  
-
-add_school("jhs","sat","karine","american","jerusalem","normal","english")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
 def query_by_nation(nationality):
     print("filter:",nationality)
     a = session.query(School).filter_by(nationality=nationality).all()
