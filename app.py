@@ -68,8 +68,13 @@ def about_us():
 
 @app.route('/school_id/<school_id>', methods=["GET", "POST"])
 def school(school_id):
+
+
     school=query_by_id(school_id)
     if request.method=='POST':
+        if login_session.get("username")==None:
+            return redirect(url_for("signup"))
+            
         text=request.form["text"]
         user=query_by_username(login_session['username'])
         add_comment(text, user, school)
@@ -99,10 +104,12 @@ def users(username):
 
 @app.route('/logout')
 def logout():
-    del login_session['id']
-    del login_session['username']
-    del login_session['first_name']
-    del login_session['last_name']
+    login_session.clear()
+    return redirect(url_for("home"))
+    # del login_session['id']
+    # del login_session['username']
+    # del login_session['first_name']
+    # del login_session['last_name']
 
 # Running the Flask app
 if __name__ == "__main__":
