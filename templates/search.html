@@ -3,8 +3,22 @@
     <head> 
         <title>Search results</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
     </head>
     <body>
         {%for result in results%}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{result.name}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        {% endfor %}
+        <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap.bundle.js') }}"></script>
     </body>
 </html>
