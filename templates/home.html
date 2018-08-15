@@ -45,9 +45,9 @@
                     <a class="fa fa-user" href="{{url_for('users',username=un.username)}}"><button class="btn btn-light navbar-btn" >User</button></a>
                     {%endif%}
                     <nav class="navbar navbar-light bg-light searchbar">
-                            <form class="form-inline">
-                              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{{url_for('search_bar')}}">Search</a></button>
+                            <form class="form-inline" method="POST" action="{{ url_for('search_bar') }}">
+                              <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" aria-label="Search">
+                              <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a href="{{url_for('search_bar')}}"></a>Search</a></button>
                             </form>
                           </nav>
                 </div>
